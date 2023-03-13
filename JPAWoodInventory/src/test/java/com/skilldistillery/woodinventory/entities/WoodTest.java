@@ -45,6 +45,11 @@ class WoodTest {
 	void test_Wood_entity_mapping() {
 		assertNotNull(wood);
 		assertEquals("walnut", wood.getSpecies());
+		assertEquals(27, wood.getLength());
+		assertEquals(1, wood.getThickness());
+		assertEquals(10, wood.getWidth());
+		assertEquals("hardwood", wood.getType());
+		
 		
 	}
 

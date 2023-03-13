@@ -8,6 +8,9 @@
 </head>
 <body>
 
+<h2>Create new Wood Item</h2>
+<h4>Please enter details of item</h4>
+
 <form action = "createReturn.do" method = "POST">
 <label for = "Species">Species: </label>
 <input type="text" id = "Species" name = "Species"> <br>
@@ -18,7 +21,9 @@
 <label for = "Width">Width in Inches: </label>
 <input type="text" id = "Width" name = "Width"> <br>
 <label for = "Type">Type: </label>
-<input type="text" id = "Type" name = "Type"><br> 
+<input type="text" id = "Type" name = "Type"><br>
+<br>
+<br> 
 <input type="submit" value="Add Scrap Piece">
 
 

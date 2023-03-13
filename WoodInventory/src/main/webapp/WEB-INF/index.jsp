@@ -11,21 +11,8 @@
 </head>
 <body>
 
-<h1>Current Wood Inventory</h1>
-
-<c:choose>
-<c:when test="${empty wood }">No Wood Available</c:when>
-<c:otherwise>
-<c:forEach var="wood" items="${wood }">
-<!-- display in a nice table -->
-<li>${wood}</li>
-</c:forEach>
-
-</c:otherwise>
-</c:choose>
-
 <form action = "create.do" method = "GET">
-<input type="submit" value="Create New Wood Entry">
+<input type="submit" value="Create New Wood Item">
 </form>
 
 <form action = "RemovePassThrough.do" method = "GET">
@@ -33,15 +20,22 @@
 </form>
 
 <form action = "UpdatePassThrough.do" method = "GET">
-<label for = "UpdateId">ID of the piece you'd like to update </label>
-<input type="text" id = "UpdateId" name = "UpdateId"> 
-<input type="submit" value="Submit">
+<input type="submit" value =  "Update Wood Item"> 
 </form>
 
 
+<h1>Current Wood Inventory</h1>
 
+<c:choose>
+<c:when test="${empty wood }">No Wood Available</c:when>
+<c:otherwise>
+<c:forEach var="wood" items="${wood}">
+<!-- display in a nice table -->
+<li>${wood}</li>
+</c:forEach>
 
-
+</c:otherwise>
+</c:choose>
 
 </body>
 </html>

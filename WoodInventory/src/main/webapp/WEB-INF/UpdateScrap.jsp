@@ -13,7 +13,7 @@
 
 <form action = "update.do">
 <label for= "Id">ID:</label>
-<input type = "text" id = "Id" name = "Id">
+<input type = "text" id = "Id" name = "Id"><br>
 <label for = "Species">Species: </label>
 <input type="text" id = "Species" name = "Species"> <br>
 <label for = "Length">Length in Inches: </label>
@@ -25,6 +25,10 @@
 <label for = "Type">Type: </label>
 <input type="text" id = "Type" name = "Type"><br> 
 <input type="submit" name= "Submit">
+</form>
+
+<form action = "index.do">
+<input type = submit name = "Home">
 </form>
 
 </body>

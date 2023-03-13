@@ -90,7 +90,7 @@ public class WoodController {
 		dao.update("wood", updateWood);
 		model.addAttribute("wood", updateWood);
 		
-		return "index";
+		return "UpdateScrap";
 		
 	}
 	
