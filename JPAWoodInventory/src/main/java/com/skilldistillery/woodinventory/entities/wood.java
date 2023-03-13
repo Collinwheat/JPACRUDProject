@@ -17,22 +17,17 @@ public class wood {
 
 	private String species;
 
-	private String dimensions;
+	@Column(name = "length_inches")
+	private int length;
+
+	@Column(name = "thickness_inches")
+	private int thickness;
+
+	@Column(name = "width_inches")
+	private int width;
 
 	private String type;
-
-	@Column(name = "image_url")
-	private String imageUrl;
-
-	public wood() {
-		
-	}
-
-	@Override
-	public String toString() {
-		return "Wood [id=" + id + ", species=" + species + ", dimensions=" + dimensions + ", type=" + type
-				+ ", imageUrl=" + imageUrl + "]";
-	}
+	
 
 	public int getId() {
 		return id;
@@ -50,12 +45,28 @@ public class wood {
 		this.species = species;
 	}
 
-	public String getDimensions() {
-		return dimensions;
+	public int getLength() {
+		return length;
 	}
 
-	public void setDimensions(String dimensions) {
-		this.dimensions = dimensions;
+	public void setLength(int length) {
+		this.length = length;
+	}
+
+	public int getThickness() {
+		return thickness;
+	}
+
+	public void setThickness(int thickness) {
+		this.thickness = thickness;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
 	}
 
 	public String getType() {
@@ -66,12 +77,14 @@ public class wood {
 		this.type = type;
 	}
 
-	public String getImageUrl() {
-		return imageUrl;
+	public wood() {
+
 	}
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	@Override
+	public String toString() {
+		return "wood [id=" + id + ", species=" + species + ", length=" + length + ", thickness=" + thickness
+				+ ", width=" + width + ", type=" + type + "]";
 	}
 
 }

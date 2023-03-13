@@ -18,11 +18,28 @@
 <c:otherwise>
 <c:forEach var="wood" items="${wood }">
 <!-- display in a nice table -->
-<li>${wood.id } ${wood.species }</li>
+<li>${wood}</li>
 </c:forEach>
 
 </c:otherwise>
 </c:choose>
+
+<form action = "create.do" method = "GET">
+<input type="submit" value="Create New Wood Entry">
+</form>
+
+<form action = "RemovePassThrough.do" method = "GET">
+<input type="submit" value="Remove Wood Item">
+</form>
+
+<form action = "UpdatePassThrough.do" method = "GET">
+<label for = "UpdateId">ID of the piece you'd like to update </label>
+<input type="text" id = "UpdateId" name = "UpdateId"> 
+<input type="submit" value="Submit">
+</form>
+
+
+
 
 
 

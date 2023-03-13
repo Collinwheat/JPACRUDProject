@@ -12,7 +12,7 @@ import com.skilldistillery.woodinventory.entities.wood;
 
 @Service
 @Transactional
-public class WoodDAOImpl implements WoodInventoryDOA {
+public class WoodDAOImpl implements WoodInventoryDAO {
 
 	@PersistenceContext
 	private EntityManager em;
@@ -25,26 +25,39 @@ public class WoodDAOImpl implements WoodInventoryDOA {
 	@Override
 	public List<wood> findAll() {
 		String jpql = "SELECT c FROM wood c";
-		return em.createQuery(jpql, wood.class).getResultList();
+		
+		List<wood> allWoodInventory = em.createQuery(jpql, wood.class).getResultList();
+		
+		
+		return allWoodInventory;
+		
 	}
 	//REMINDER
 		//NO BEGIN/COMMIT
 		//NO EM.CLOSE
 	@Override
 	public wood create(wood wood) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(wood);
+		return wood;
 	}
 	@Override
-	public wood update(int woodId, wood wood) {
-		// TODO Auto-generated method stub
-		return null;
+	public wood update(String updateWood, wood wood) {
+		em.remove(findById(wood.getId()));
+		em.persist(wood);
+		return wood;
 	}
 
 	@Override
 	public boolean deleteById(int woodId) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean removed = false;
+		
+		wood woodRemoving = em.find(wood.class, woodId);
+		
+		if (woodRemoving != null) {
+			em.remove(woodRemoving);
+			removed = !em.contains(woodRemoving);
+		}
+		return removed;
 	}
 
 }

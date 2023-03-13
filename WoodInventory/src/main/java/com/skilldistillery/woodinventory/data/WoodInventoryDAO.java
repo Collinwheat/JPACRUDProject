@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.skilldistillery.woodinventory.entities.wood;
 
-public interface WoodInventoryDOA {
+public interface WoodInventoryDAO {
 
 	wood findById(int woodId);
 		
@@ -12,7 +12,7 @@ public interface WoodInventoryDOA {
 	
 	wood create(wood wood);
 	
-	wood update(int woodId, wood wood);
+	wood update(String woodName, wood wood);
 	
 	boolean deleteById(int woodId);
 	
